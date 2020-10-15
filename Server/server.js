@@ -1,16 +1,7 @@
 const express=require('express');
-
+const bodyParser=require('body-parser');
 const app= express();
 
-app.use((req,res,next)=>{
-    console.log('<h1>Hello</h1>');
-    next();
-})
-
-
-app.get('/',(req,res)=>{
-    res.send('getting root');
-})
-
+app.use(express.static(__dirname+'/public'))
 
 app.listen(3000);
