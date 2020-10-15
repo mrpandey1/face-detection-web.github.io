@@ -1,12 +1,23 @@
-const http = require('http');
+const { request } = require("express");
 
-const server = http.createServer((request,response)=>{
-    const user={
-        name:'John',
-        hobby:'Skating',
-    }
-    response.setHeader('Content-Type','text/html');
-    response.end(JSON.stringify(user));
+const express=require('express');
+
+const app= express();
+
+app.get('/',(req,res)=>{
+    res.send('getting root');
 })
 
-server.listen(3000);
+app.get('/profile',(req,res)=>{
+    res.send('getting profile');
+})
+
+app.post('/profile ',(req,res)=>{
+    const user={
+        name:'nishant',
+        hobby:'soccer'
+    }
+    res.send(user);
+})
+
+app.listen(3000);
