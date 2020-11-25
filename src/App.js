@@ -9,16 +9,17 @@ import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+
 const app=new Clarifai.App({
   apiKey:'96210a293f454385916ae894c0e20535'
 })
 const particleOptions ={
   particles:{
     number:{
-      // value:100,
+      value:100,
       density:{
         enable:true,
-        // value_area:800
+        value_area:800
       }
     }
   }
@@ -34,7 +35,11 @@ class App extends Component {
       isSignedIn:false,
     }
   }
-
+componentDidMount(){
+  fetch('http://localhost:3000/')
+  .then(response=>response.json())
+  .then(console.log)
+}
   calculateFaceLocation=(data)=>{
     const clarifaiFace= data.outputs[0].data.regions[0].region_info.bounding_box;
     const image=document.getElementById('inputimage');
@@ -76,9 +81,9 @@ class App extends Component {
     const {isSignedIn,imageUrl,route,box}=this.state;
     return (
       <div className="App">
-        <Particles className='particles'
+        {/* <Particles className='particles'
           params={particleOptions}
-        />
+        /> */}
         <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
         {route==='home'?<div>
               <Logo/>

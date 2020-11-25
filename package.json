@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bcrypt-nodejs": "0.0.3",
     "clarifai": "^2.9.1",
+    "cors": "^2.8.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-particles-js": "^3.3.0",
