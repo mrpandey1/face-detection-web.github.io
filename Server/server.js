@@ -19,33 +19,6 @@ const db=knex({
 app.use(bodyParser.json());
 app.use(cors())
 
-const database={
-    users:[
-        {
-            id:'123',
-            name:'nishant',
-            email:'pandey@gmail.com',
-            password:'cookies',
-            entries:0,
-            joined:new Date()
-        },     
-        {
-            id:'124',
-            name:'prashant',
-            email:'prashant@gmail.com',
-            password:'password',
-            entries:0,
-            joined:new Date()
-        }
-    ],
-    login:[
-        {
-            id:'987',
-            hash:'',
-            email:'pandeynishant12345@gmail.com'
-        }
-    ]
-}
 
 app.get('/',(req,res)=>{
     res.send(database.users);
