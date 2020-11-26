@@ -5,7 +5,7 @@ const cors=require('cors');
 const bcrypt=require('bcrypt-nodejs');
 const knex=require('knex');
 
-const postgres=knex({
+const db=knex({
     client:'pg',
     connection:{
         host:'127.0.0.1',
@@ -15,11 +15,10 @@ const postgres=knex({
     }
 });
 
-console.log(postgres.select('*').from('users'));
-
 
 app.use(bodyParser.json());
 app.use(cors())
+
 const database={
     users:[
         {
@@ -65,30 +64,32 @@ app.post('/signin',(req,res)=>{
 app.post('/register',(req,res)=>{
     const { email, name, password}=req.body;
     bcrypt.hash(password,null,null,function(err,hash){
-        console.log(hash);
+        // console.log(hash);
     });
-    database.users.push({
-        id:'125',
-        name:name,
+    db('users')
+    .returning('*')
+    .insert({
         email:email,
-        entries:0,
+        name:name,
         joined:new Date()
     })
-    res.json(database.users[database.users.length-1]);
+    .then(user=>{
+        res.json(user[0])
+    })
+    .catch(err=>res.status(400).json(err))
 })
 
 app.get('/profile/:id',(req,res)=>{
     const {id} = req.params;
     let found=false;
-    database.users.forEach(user=>{
-        if(user.id===id){
-            found=true
-            return res.json(user);
+    db.select('*').from('users').where({id:id}).then(user=>{
+        if(user.length){
+            res.json(user[0])
+        }else{
+            res.status(400).json('Not Found')
         }
     })
-    if(!found){
-        res.status(400).json('no such user');
-    }
+    .catch(err=>res.status(400).json('error getting user'))
 })
 
 app.put('/image',(req,res)=>{
