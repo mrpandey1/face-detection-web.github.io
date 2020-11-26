@@ -3,6 +3,21 @@ const bodyParser=require('body-parser');
 const app=express();
 const cors=require('cors');
 const bcrypt=require('bcrypt-nodejs');
+const knex=require('knex');
+
+const postgres=knex({
+    client:'pg',
+    connection:{
+        host:'127.0.0.1',
+        user:'postgres',
+        password:'postgres',
+        database:'smart-brain-project'
+    }
+});
+
+console.log(postgres.select('*').from('users'));
+
+
 app.use(bodyParser.json());
 app.use(cors())
 const database={
