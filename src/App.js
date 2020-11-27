@@ -13,10 +13,10 @@ import Register from './components/Register/Register';
 const particleOptions ={
   particles:{
     number:{
-      value:100,
+      value:50,
       density:{
         enable:true,
-        value_area:800
+        value_area:500
       }
     }
   }
@@ -113,9 +113,9 @@ class App extends Component {
     const {isSignedIn,imageUrl,route,box}=this.state;
     return (
       <div className="App">
-        {/* <Particles className='particles'
+        <Particles className='particles'
           params={particleOptions}
-        /> */}
+        />
         <Navigation onRouteChange={this.onRouteChange} isSignedIn={isSignedIn}/>
         {route==='home'?<div>
               <Logo/>
