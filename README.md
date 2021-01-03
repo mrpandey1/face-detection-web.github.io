@@ -23,8 +23,8 @@
 
 ## Mobile-view
 <p align="center"> 
-<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/mobile1.png">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/mobile1.jpeg">
 <br>
-<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/mobile2.png">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/mobile2.jpeg">
 </p>
 
