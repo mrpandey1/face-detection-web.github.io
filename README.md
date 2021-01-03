@@ -9,24 +9,22 @@
 
 ## Login and Home screen
 <p align="center"> 
-<img src="https://github.com/mrpandey1/shopify/blob/main/screenshots/authentication.png">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/pc1.png">
 <br>
-<img src="https://github.com/mrpandey1/shopify/blob/main/screenshots/pc1.png">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/pc2.png">
 </p>
 <br>
 
-## Category and Checkout
+## Output
 <p align="center"> 
-<img src="https://github.com/mrpandey1/shopify/blob/main/screenshots/pc2.png">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/pc3.png">
 <br>
-<img src="https://github.com/mrpandey1/shopify/blob/main/screenshots/pc3.png">
-</p>
-<br>
+ </p>
 
 ## Mobile-view
 <p align="center"> 
-<img src="https://github.com/mrpandey1/shopify/blob/main/screenshots/mobile1.jpeg">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/mobile1.png">
 <br>
-<img src="https://github.com/mrpandey1/shopify/blob/main/screenshots/mobile2.jpeg">
+<img src="https://github.com/mrpandey1/face-detection-web.github.io/blob/master/screenshots/mobile2.png">
 </p>
 
